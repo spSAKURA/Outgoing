@@ -22,15 +22,11 @@ class Config
 		}
 	}
 	/*
-	| updateConf
+	| _updateConf
 	*/
 	protected function _updateConf(&$config,$key,$val)
 	{
-		if(!$config)
-		{
-			$config = $val;
-		}
-		elseif(gettype($val) != 'array' && $config != $val)
+		if(!$config || (gettype($val) != 'array' && $config != $val))
 		{
 			$config = $val;
 		}

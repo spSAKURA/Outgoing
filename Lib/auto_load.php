@@ -6,4 +6,10 @@ return function ($class_name){
 		$path = LIB_DIR . '/' . join('/',$cls) . '.class.php';
 		include $path;
 	}
+	elseif($cls[0] === 'App')
+	{
+		unset($cls[0]);
+		$path = ROOT_DIR . '/' . join('/',$cls) . '.class.php';
+		include $path;
+	}
 };
