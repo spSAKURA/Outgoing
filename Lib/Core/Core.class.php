@@ -15,10 +15,7 @@ class Core
 		spl_autoload_register(include LIB_DIR . '/auto_load.php');
         // set_error_handler('\Core\Core::appError');
         // set_exception_handler('\Core\Core::error_handler');
-        $routing = C('ROUTING_RULE');
-        foreach ($routing as $rule) {
-        	$rule::check();
-        }
+        
 	}
 	/*
 	| 
@@ -38,7 +35,10 @@ class Core
 	public static function run()
 	{
 		self::_init();
-		# test code
-		var_dump(C('EXTRA_CONF.0'));
+		$routing = C('ROUTING_RULE');
+        foreach ($routing as $rule) {
+        	$rule = new $rule();
+        	$rule->check();
+        }
 	}
 }

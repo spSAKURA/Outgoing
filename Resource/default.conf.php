@@ -12,6 +12,6 @@ return [
 	//注册路由规则
 	'ROUTING_RULE'=>[
 		'route'=>'\Route\Route',
-		'hello'=>'App\Route\HelloRoute',
+		'hello'=>'\App\Route\HelloRoute',
 	]
 ];
